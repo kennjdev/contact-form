@@ -1,5 +1,8 @@
 <?php
 require_once ('recaptchalib.php');
+require_once ('smtpMailer.php');
+
+
 $publickey = "6LeJNL8fAAAAABKxbTW2tgpCma-atxUrN0fs1aL3";
 $privatekey = "";
 $reCaptcha = new ReCaptcha($privatekey);
@@ -62,8 +65,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     if (sizeof($errors) == 0)
     {
-        $values = array(); 
-        $successMessage = "Your message has sent. Thank you !";
+      
+
+
+        $mail = new SMTPMailer();
+
+        $mail->addTo('admin@gmail.com');
+
+        $mail->Subject($values["subject"]);
+
+      
+        $body=
+         " name :".$values["yourname"] ."\n".
+         " phone :".$values["phone"] ."\n".
+         " email :".$values["email"] ."\n".
+         " message :".$values["comments"] ."\n";
+         
+        $mail->Body($body );
+
+        if ($mail->Send()){
+            $successMessage = "Your message has sent. Thank you !";
+            $values = array(); 
+        }
+
+
+
+    
     }
 }
 function check_input($input)
