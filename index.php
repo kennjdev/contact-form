@@ -125,7 +125,7 @@ function check_input($input)
                     <h3 style="margin-bottom: 25px; text-align: center;">Contact Form</h3>
                     
                     <div class="form-group">
-                        <p>Name: <input type="text" class="form-control" name="yourname"
+                        <p> <i style='color:red;'>*</i> Name: <input type="text" class="form-control" name="yourname"
                                 value="<?php echo htmlspecialchars(@$values['yourname']) ?>" /></P>
                         <?php if (isset($errors['yourname']))
                         { ?>
@@ -136,7 +136,7 @@ function check_input($input)
                         } ?>
                     </div>
                     <div class="form-group">
-                        <P>Email: <input type="text" class="form-control" name="email"
+                        <P> <i style='color:red;'>*</i> Email: <input type="text" class="form-control" name="email"
                                 value="<?php echo htmlspecialchars(@$values['email']) ?>" /></p>
                         <?php if (isset($errors['email']))
                         { ?>
@@ -147,7 +147,7 @@ function check_input($input)
                         } ?>
                     </div>
                     <div class="form-group">
-                        <p>Phone: <input class="form-control" type="text" name="phone"
+                        <p> <i style='color:red;'>*</i> Phone: <input class="form-control" type="text" name="phone"
                                 value="<?php echo htmlspecialchars(@$values['phone']) ?>" /></p><br />
                         <?php if (isset($errors['phone']))
                         { ?>
@@ -158,7 +158,7 @@ function check_input($input)
                         } ?>
                     </div>
                     <div class="form-group">
-                        <p>Subject: <input class="form-control" type="text" name="subject"
+                        <p> <i style='color:red;'>*</i> Subject: <input class="form-control" type="text" name="subject"
                                 value="<?php echo htmlspecialchars(@$values['subject']) ?>" /></p>
                         <?php if (isset($errors['subject']))
                         { ?>
@@ -169,7 +169,7 @@ function check_input($input)
                         } ?>
                     </div>
                     <div class="form-group">
-                        <p>Comments:
+                        <p> <i style='color:red;'>*</i> Comments:
                             <?php if (isset($errors['comments']))
                             { ?>
                             <span style="color: red;">
