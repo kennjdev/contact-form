@@ -1,7 +1,7 @@
 <?php
 require_once ('recaptchalib.php');
 $publickey = "6LeJNL8fAAAAABKxbTW2tgpCma-atxUrN0fs1aL3";
-$privatekey = "6LeJNL8fAAAAAOsMWJA4723_TcE6Ht-5lvpAQXmF";
+$privatekey = "";
 $reCaptcha = new ReCaptcha($privatekey);
 
 $successMessage = '';
